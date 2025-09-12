@@ -1,0 +1,259 @@
+    
+/* styles.css */
+
+*{
+    background-color: #242121;
+    color: white; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2{
+    padding: 20px
+}
+
+h3{
+    padding: 20px;
+    color: #ff00c1;
+}
+
+
+/* Navigation courtesty of Codepen because I did not know how to make a responsive CSS only nav. 
+Credit: https://codepen.io/jo_Geek/pen/xgbaEr */
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+}
+
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: #ff00c1;
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #00b8ff;
+  font-family: 'Monaco', monospace;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+/* End Navigation */
+
+
+
+h1{
+    text-align: center;
+    padding: 20px;
+    font-family: 'Monaco', monospace;
+    letter-spacing: 10px; 
+}
+
+.mytitles {
+    text-align: left;
+    padding: 20px;
+    background-color: black;
+}
+
+#myschool {
+    color: #be63ff;
+    background-color: black;
+}
+
+#mywork {
+    color: #00fff9;
+    background-color: black;
+}
+
+.intro {
+    margin: 24px auto;
+    padding: 20px;
+}
+
+.intro a {
+    color: #00b8ff;
+}
+
+.intro a:hover {
+     color: #ff00c1;
+}
+
+#introtext {
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+
+#hobbieslist {
+    list-style-type: square;
+    line-height: 1.6;
+    padding-left: 30px;
+    margin-left: 20px
+}
+
+/* Very simple layout: text on the left, image on the right 
+Courtesty of Chat GPT. 
+Prompt: Please write very simple html and css so that there is text on the left and an image on the right of the text*/
+
+.row {
+display: flex;
+align-items: flex-start;
+gap: 16px;
+max-width: 900px;
+margin: 24px auto;
+padding: 16px;
+}
+
+
+.text {
+flex: 1;
+}
+
+
+.image {
+flex: 1;
+display: flex;
+justify-content: flex-end;
+}
+
+
+.image img {
+max-width: 100%;
+height: auto;
+display: block;
+}
+
+
+/* Stack on small screens */
+@media (max-width: 700px) {
+.row { flex-direction: column; }
+.image { justify-content: flex-start; }
+}
+
+
+/* Chat GPT Prompt: now do one with slightly different class names where the image is on the left instead */
+
+/* Layout: image on the left, text on the right */
+/* Layout: image on the left, text on the right */
+.container {
+display: flex;
+align-items: flex-start;
+gap: 16px;
+max-width: 900px;
+margin: 24px auto;
+padding: 16px;
+}
+
+
+.picture {
+flex: 1;
+}
+
+
+.picture img {
+max-width: 100%;
+height: auto;
+display: block;
+}
+
+
+.content {
+flex: 1;
+}
+
+
+/* Stack on small screens with text first */
+@media (max-width: 700px) {
+.container {
+flex-direction: column;
+}
+.content {
+order: -1; /* move text above image */
+}
+}
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
