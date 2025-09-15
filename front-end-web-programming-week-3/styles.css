@@ -1,0 +1,419 @@
+/* Note: I asked ChatGPT to make my code look prettier and just tidy it up. */
+
+/* -------------------
+   Base variables
+------------------- */
+:root {
+  --main-bg-color: #242121;
+  --main-text-color: #ffffff;
+  --accent-color: #ff00c1;
+  --link-color: #00b8ff; /* kept for general links if you want it elsewhere */
+  --nav-text-color: #3e0a53;
+}
+
+/* -------------------
+   Base elements
+------------------- */
+
+/* Needed because your HTML nests an <a> inside .drop-trigger */
+.drop-trigger a {
+  font-family: 'Monaco', monospace;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #3e0a53;
+  text-decoration: none;
+}
+.drop-trigger a:hover { color: #000; }
+
+body {
+  margin: 0;
+  font-family: 'segoe ui', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(32, 28, 28);
+  color: var(--main-text-color);
+}
+
+button {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Monaco', monospace;
+  letter-spacing: 10px;
+}
+
+h2 { padding: 20px; }
+
+h3 {
+  padding: 20px;
+  color: var(--accent-color);
+}
+
+/* -------------------
+   Navigation (responsive CSS-only)
+   Credit: https://codepen.io/jo_Geek/pen/xgbaEr
+------------------- */
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: var(--accent-color);
+  position: relative;
+}
+
+.nav > .nav-header { display: inline; }
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px;
+}
+
+.nav > .nav-btn { display: none; }
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+}
+
+/* Unified nav typography + color (top-level links and dropdown trigger) */
+.nav > .nav-links > a,
+.drop-trigger {
+  font-family: 'Monaco', monospace;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--nav-text-color);
+  text-decoration: none;
+  display: inline-block;
+  padding: 13px 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover/focus states for all nav items */
+.nav > .nav-links > a:hover,
+.nav > .nav-links > a:focus-visible,
+.drop-trigger:hover,
+.drop-trigger:focus-visible,
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+  background-color: rgba(255, 255, 255, 0.3); /* translucent white behind text */
+  color: #000; /* black text on hover/focus */
+}
+
+/* Dropdown (desktop + mobile) */
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+/* Hide the mobile submenu toggle checkbox */
+.subnav-check {
+  position: absolute;
+  left: -9999px;
+}
+
+/* Dropdown menu panel */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background-color: #ddcdcd;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+}
+
+/* Submenu items stack neatly (separate from unified to avoid override duplication) */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 12px;
+  font-family: 'Monaco', monospace;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--nav-text-color);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Desktop open on hover/focus */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+/* Mobile (nav drawer) */
+.nav > #nav-check { display: none; }
+
+@media (max-width: 600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,
+  .nav #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links { height: 0; }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+
+  /* Dropdown fits inside the drawer on mobile */
+  .dropdown { display: block; }
+  .drop-trigger {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background-color: #333;
+    border-radius: 0;
+  }
+  .subnav-check:checked ~ .dropdown-menu { display: block; }
+}
+
+/* Optional: visible focus outline for accessibility */
+.nav a:focus-visible,
+.drop-trigger:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* -------------------
+   Content styles
+------------------- */
+.mytitles { text-align: left; padding: 20px; }
+
+#avatar {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  margin-bottom: -30px;
+}
+
+#myschool { color: #be63ff; }
+#mywork { color: #00fff9; }
+
+.intro { margin: 24px auto; padding: 20px; }
+
+.intro a { color: var(--link-color); }
+.intro a:hover { color: var(--accent-color); }
+
+#introtext {
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+#hobbieslist {
+  list-style-type: square;
+  line-height: 1.6;
+  padding-left: 30px;
+  margin-left: 20px;
+}
+
+/* -------------------
+   Two-column layout
+------------------- */
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1 1 500px; /* grows to fill row; wraps as needed */
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* Stack columns on smaller screens (full width) */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .column {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+/* -------------------
+   Misc
+------------------- */
+
+
+/* -------------------
+   This whole aria-current thing is a mess. I CANNOT for the life of me 
+   get "Projects" to appear with an underline. Probably because I used some 
+   silly spaghetti code to make a responsive nav from Codepen.io. HELP PlEASE.
+------------------- */
+
+/* Active/current-page state (works with aria-current) */
+.nav .nav-links > a[aria-current],
+.nav .nav-links > a[aria-current="page"],
+.dropdown-menu a[aria-current],
+.dropdown-menu a[aria-current="page"],
+/* optional class hook if you prefer adding a class in HTML */
+.nav .nav-links > a.is-active,
+.dropdown-menu a.is-active {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+/* Keep underline on hover/focus too */
+.nav .nav-links > a[aria-current]:hover,
+.nav .nav-links > a[aria-current]:focus-visible,
+.dropdown-menu a[aria-current]:hover,
+.dropdown-menu a[aria-current]:focus-visible,
+.nav .nav-links > a.is-active:hover,
+.nav .nav-links > a.is-active:focus-visible {
+  text-decoration: underline;
+}
+
+/* Layout */
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;               /* two gaps per row = 40px total */
+  justify-content: center; /* optional centering */
+}
+
+/* Titles above images, centered */
+.portfolio h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 15px;  
+  color: #ff00c1;
+}
+
+/* Cards: exactly 3 across (account for the 2 gaps) */
+.project1,
+.project2,
+.project3,
+.project4,
+.project5,
+.project6 {
+  flex: 0 0 calc((90% - 40px) / 3);  /* 3 columns with gaps considered */
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;               /* keep them square */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;            /* stack title + image vertically */
+  align-items: center;               /* center horizontally */
+  justify-content: center;           /* center vertically */
+  text-align: center;
+  height: auto;    /* let height grow with content */
+}
+
+/* Switch to exactly 1 per row on small screens */
+@media (max-width: 900px) {
+  .project1,
+  .project2,
+  .project3,
+  .project4,
+  .project5,
+  .project6 {
+    flex: 0 0 100%;
+    max-width: 500px;  /* optional: cap size so squares don’t get huge */
+    margin: 0 auto;    /* center the single column */
+    height: auto;    /* let height grow with content */
+  }
+}
+
+/* Images inside projects */
+.portfolio img {
+  width: 400px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-top: -30px;
+  transition: filter 0.3s ease;
+}
+
+/* Hover: desaturate and lighten */
+.portfolio img:hover {
+  filter: grayscale(70%) brightness(1.1);
+}
+
+.portfolio .image-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.portfolio .image-wrap > [class^="project"] {
+  flex: 0 0 calc((100% - 40px) / 3);
+  box-sizing: border-box;
+}
+@media (max-width: 900px) {
+  .portfolio .image-wrap > [class^="project"] {
+    flex: 0 0 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+
+/* Footer stuff goes here! */
+
+#footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #888;
+  margin-top: 40px;
+}

@@ -1,0 +1,100 @@
+<!--Note: I asked ChatGPT to make my code look prettier and just tidy it up.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Victoria Leighton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+
+      <div class="nav-header"></div>
+
+      <div class="nav-btn">
+        <label for="nav-check" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <!-- Home link (no dropdown) -->
+        <a href="/index.html" class="nav-link">Home</a>
+
+        <!-- Projects with dropdown -->
+        <div class="dropdown" aria-current="page">
+          <input type="checkbox" id="w2-check" class="subnav-check" aria-current="page" />
+          
+          <label for="w2-check" class="drop-trigger" aria-current="page">
+            <a href="/projects.html" aria-current="page">Projects ▾</a>
+          </label>
+
+          <div class="dropdown-menu" role="menu" aria-label="Projects submenu">
+            <a target=”_blank” href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-1/" role="menuitem">Week 1</a>
+            <a target=”_blank” href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-2/" role="menuitem">Week 2</a>
+            <a target=”_blank” href="#" role="menuitem">Week 3</a>
+            <a target=”_blank” href="#" role="menuitem">Week 4</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1>Victoria Leighton</h1>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <div class="portfolio">
+    <div class="image-wrap">
+      <div class="project1">
+        <h2>Project 1</h2>
+        <a target=”_blank” href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-1/"><img src="/week-3-images/pc1.png" alt="Screenshot of Project 1"/></a>
+      </div>
+
+      <div class="project2">
+        <h2>Project 2</h2>
+        <a target=”_blank” href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-2/"><img src="/week-3-images/pc2.png" alt="Screenshot of Project 2"/></a>
+      </div>
+
+      <div class="project3">
+        <h2>Project 3</h2>
+        <a target=”_blank” href="/index.html"><img src="/week-3-images/pc3.png" alt="Screenshot of Project 3"/></a>
+      </div>
+
+      <div class="project4">
+        <h2>Project 4</h2>
+        <a target=”_blank” href="#"><img src="/week-3-images/pc4.png" alt="Screenshot of Project 4"/></a>
+      </div>
+
+      <div class="project5">
+        <h2>Project 5</h2>
+        <a target=”_blank” href="#"><img src="/week-3-images/pc5.png" alt="Screenshot of Project 5"/></a>
+      </div>
+
+      <div class="project6">
+        <h2>Project 6</h2>
+       <a target=”_blank” href="#"><img src="/week-3-images/pc6.png" alt="Screenshot of Project 6"/></a>
+      </div>
+
+    </div>
+    </div>
+  </main>
+
+
+
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p>Copyright © 2025 Victoria Leighton</p>
+  </footer>
+</body>
+</html>
