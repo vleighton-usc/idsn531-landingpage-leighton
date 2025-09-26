@@ -1,0 +1,98 @@
+<!--Note: I asked ChatGPT to make my code look prettier and just tidy it up.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Victoria Leighton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+
+      <div class="nav-header"></div>
+
+      <div class="nav-btn">
+        <label for="nav-check" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <!-- Home link (no dropdown) -->
+        <a href="index.html" aria-current="page" class="nav-link">Home</a>
+        
+        <!-- Projects with dropdown -->
+        <div class="dropdown">
+          <input type="checkbox" id="w2-check" class="subnav-check" />
+
+          <label for="w2-check" class="drop-trigger">
+            <a href="projects.html">Projects ▾</a>
+          </label>
+
+          <div class="dropdown-menu" role="menu" aria-label="Projects submenu">
+            <a target=”_blank” href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-1/" role="menuitem">Week 1</a>
+            <a target=”_blank” href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-2/" role="menuitem">Week 2</a>
+            <a target=”_blank” href="#" role="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-3/">Week 3</a>
+            <a target=”_blank” href="#" role="index.html">Week 4</a>
+          </div>
+        </div>
+
+        <a href="resume.html" class="nav-link">Resume</a>
+        <a href="hobbies.html" class="nav-link">Hobbies</a>
+      </div>
+      
+    </div>
+
+    <h1>Victoria Leighton</h1>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <div class="container">
+      <div class="column">
+        <div class="mytitles">
+          <img
+            src="week-3-images/cartoon.png"
+            alt="Cartoon avatar of Victoria Leighton"
+            id="avatar"
+          />
+          <h2 id="myschool">
+            Student at University of Southern California<br />
+            M.S. in Integrated Design, Business and Technology
+          </h2>
+          <h2 id="mywork">Associate Web Producer at Mattel | American Girl</h2>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="intro">
+          <p id="introtext">
+            I am Victoria Leighton. This is my
+            <a target=”_blank” href="https://www.linkedin.com/in/victoria-leighton/">LinkedIn</a>.<br /><br />
+            You're probably wondering what the point of this page is. Well, I'm going back to the basics of HTML and CSS!
+            You see, in Website Production I'm more focused on Content Authoring, which involves a lot of
+            <i>understanding</i> HTML and CSS but not necessarily writing it myself.
+            Believe it or not, I used to be pretty good at writing HTML and CSS from scratch but now I feel like I've totally lost my knowledge.<br /><br />
+            I know this page is really ugly right now, and not a e s t h e t i c. But I will get there! I promise I'm actually pretty good at web design!
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p>Copyright © 2025 Victoria Leighton</p>
+  </footer>
+</body>
+</html>
