@@ -1,0 +1,85 @@
+<!--Note: I asked ChatGPT to make my code look prettier and just tidy it up.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Victoria Leighton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Navigation -->
+   <header>
+    <div class="container navbar">
+      <div class="brand">Victoria Leighton</div>
+
+      <!-- Mobile toggle -->
+      <input type="checkbox" id="menu-toggle" aria-label="Toggle navigation" />
+      <label class="hamburger" for="menu-toggle" aria-hidden="true">
+        <span></span>
+      </label>
+
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <!-- Current page example -->
+          <li class="nav-item">
+            <a class="nav-link"  href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <details>
+              <!-- If Projects parent page is current, put aria-current here -->
+              <summary class="nav-link" aria-haspopup="true">
+                <a id="projects-overwrite" href="projects.html">Projects</a><span class="caret" >▾</span></summary>
+        
+
+          
+              
+              <ul class="submenu" aria-label="Projects submenu">
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-1/">Week 1</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-2/">Week 2</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-3/">Week 3</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-4/">Week 4</a></li>
+                <li><a target="_blank" href="index.html">Week 5</a></li>
+                <li><a target="_blank" href="#">Week 6</a></li>
+                <li><a href="#">Week 7</a></li>
+                <li><a href="#">Week 8</a></li>
+              </ul>
+            </details>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="hobbies.html">Hobbies</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page"  href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<br/>
+<br/>
+<br/>
+  <form>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" placeholder="Jake" required>
+
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname" placeholder="Spurlock" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="jake@spurlock.com" required>
+
+    <label for="subject">Subject:</label>
+    <textarea id="subject" name="subject" placeholder="Write a story here..." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p>Copyright © 2025 Victoria Leighton</p>
+  </footer>
+</body>
+</html>
