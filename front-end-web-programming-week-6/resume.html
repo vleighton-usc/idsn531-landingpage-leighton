@@ -1,3 +1,5 @@
+<!--Note: I asked ChatGPT to make my code look prettier and just tidy it up.-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +26,7 @@
         <ul class="nav-list">
           <!-- Current page example -->
           <li class="nav-item">
-            <a class="nav-link" aria-current="page"  href="index.html">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
 
           <li class="nav-item">
@@ -41,15 +43,15 @@
                 <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-2/">Week 2</a></li>
                 <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-3/">Week 3</a></li>
                 <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-4/">Week 4</a></li>
-                <li><a target="_blank" href="index.html">Week 5</a></li>
-                <li><a target="_blank" href="#">Week 6</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-5/">Week 5</a></li>
+                <li><a target="_blank" href="index.html">Week 6</a></li>
                 <li><a href="#">Week 7</a></li>
                 <li><a href="#">Week 8</a></li>
               </ul>
             </details>
           </li>
 
-          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="resume.html">Resume</a></li>
           <li class="nav-item"><a class="nav-link" href="hobbies.html">Hobbies</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
@@ -57,39 +59,75 @@
     </div>
   </header>
 
+
   <!-- Main content -->
   <main>
-    <div class="container">
-      <div class="column">
-        <div class="mytitles">
-          <img
-            src="week-3-images/cartoon.png"
-            alt="Cartoon avatar of Victoria Leighton"
-            id="avatar"
-          />
-          <h2 id="myschool">
-            Student at University of Southern California<br />
-            M.S. in Integrated Design, Business and Technology
-          </h2>
-          <h2 id="mywork">Associate Web Producer at Mattel | American Girl</h2>
-        </div>
-      </div>
 
-      <div class="column">
-        <div class="intro">
-          <p id="introtext">
-            I am Victoria Leighton. This is my
-            <a target="_blank" href="https://www.linkedin.com/in/victoria-leighton/">LinkedIn</a>.<br /><br />
-            You're probably wondering what the point of this page is. Well, I'm going back to the basics of HTML and CSS!
-            You see, in Website Production I'm more focused on Content Authoring, which involves a lot of
-            <i>understanding</i> HTML and CSS but not necessarily writing it myself.
-            Believe it or not, I used to be pretty good at writing HTML and CSS from scratch but now I feel like I've totally lost my knowledge.<br /><br />
-            I know this page is really ugly right now, and not a e s t h e t i c. But I will get there! I promise I'm actually pretty good at web design!
-          </p>
-        </div>
-      </div>
-    </div>
-  </main>
+<section class="card">
+<h2>Skills</h2>
+<div class="chips">
+<span class="chip">UX/UI</span>
+<span class="chip">HTML/CSS</span>
+<span class="chip">Content Development</span>
+<span class="chip">Project Management</span>
+<span class="chip">Creative Production</span>
+</div>
+</section>
+
+
+<section class="card">
+<h2>Tools</h2>
+<div class="chips">
+<span class="chip">Jira</span>
+<span class="chip">Confluence</span>
+<span class="chip">GA4</span>
+<span class="chip">Contentstack</span>
+<span class="chip">Drupal</span>
+</div>
+</section>
+</aside>
+<br />
+<hr style="width: 90%;border: none; height: 1px; background-color: #283618;">
+
+<!-- Main column -->
+<main>
+
+
+<section class="card">
+<h2>Experience</h2>
+<article>
+<h3>Associate Web Producer · Mattel, American Girl</h3>
+<div class="meta">Los Angeles, CA · Aug. 2025 – Present</div>
+<ul>
+<li>Content authoring and UX coordination for key product launches.</li>
+
+</ul>
+</article>
+<hr style="border:0;border-top:1px solid var(--rule);margin:12px 0" />
+<article>
+<h3>Brand & Web Producer · Guidewire</h3>
+<div class="meta">Los Angeles CA · 2021 – 2023</div>
+<ul>
+<li>Redesigned careers site and developed creative brand content.</li>
+</ul>
+</article>
+</section>
+<br />
+<hr style="width: 90%;border: none; height: 1px; background-color: #283618;">
+<section class="card">
+<h2>Education</h2>
+<article>
+<h3>USC · M.S. Integrated Design, Business & Technology</h3>
+<div class="meta">2025 – 2027 (expected)</div>
+</article>
+<article>
+<h3>Fordham University · B.A. Digital Technologies & Emerging Media</h3>
+<div class="meta">2016 – 2020</div>
+</article>
+</section>
+
+</main>
+</div>
 
   <!-- Footer -->
   <footer id="footer">
