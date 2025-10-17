@@ -358,6 +358,15 @@ h3 {
   margin: 20px;
   text-align: center;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;   
+  align-items: center;      
+
+
+.single-column .controls {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
 }
 
 /* Active/current-page state (works with aria-current) */
