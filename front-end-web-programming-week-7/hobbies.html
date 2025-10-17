@@ -1,0 +1,115 @@
+<!--Note: I asked ChatGPT to make my code look prettier and just tidy it up.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Victoria Leighton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+
+</head>
+
+<body>
+  <!-- Navigation -->
+   <header>
+    <div class="container navbar">
+      <div class="brand">Victoria Leighton</div>
+
+      <!-- Mobile toggle -->
+      <input type="checkbox" id="menu-toggle" aria-label="Toggle navigation" />
+      <label class="hamburger" for="menu-toggle" aria-hidden="true">
+        <span></span>
+      </label>
+
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <!-- Current page example -->
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <details>
+              <!-- If Projects parent page is current, put aria-current here -->
+              <summary class="nav-link" aria-haspopup="true">
+                <a id="projects-overwrite" href="projects.html">Projects</a><span class="caret" >▾</span></summary>
+        
+
+          
+              
+              <ul class="submenu" aria-label="Projects submenu">
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-1/">Week 1</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-2/">Week 2</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-3/">Week 3</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-4/">Week 4</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-5/">Week 5</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-6/">Week 6</a></li>
+                <li><a href="index.html">Week 7</a></li>
+                <li><a href="#">Week 8</a></li>
+              </ul>
+            </details>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page"  href="hobbies.html">Hobbies</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <div class="container">
+      <div class="column">
+        <div class="mytitles">
+
+          <h2 id="myschool">
+            Rock climbing<br />
+          </h2>
+          <p id="introtext">When I moved to Los Angeles, there were 3 different houses to be sorted in. (Much like Gryffindor, Slytherin, or Hufflepuff.) My options were bouldering, pickle ball, or golf. I chose bouldering and now I'm pretty good at it!</p>
+        </div>
+        
+      </div>
+
+
+      <div class="column">
+        
+        <div class="intro">
+          
+
+          <h2 id="myschool">
+            Piano<br />
+          </h2>
+          <p id="introtext">I've played piano for most of my life and I love classical music. Although I haven't been very good about practicing since starting school and a new job. My favorite composer is Chopin! I also like to play music from video games.</p>
+        </div>
+      </div>
+    </div>
+
+<br /> 
+
+<div class="single-column">
+  <h2>Pancake the Corgi</h2>
+
+  <img id="slider" src="week-3-images/pc6.png" alt="Slide" style="max-width:100%;height:auto;display:block;margin-top: -35px;">
+
+  <div class="controls">
+    <button id="prevBtn">Prev</button>
+    <button id="nextBtn">Next</button>
+  </div>
+</div>
+
+<script src="script.js" defer></script>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p>Copyright © 2025 Victoria Leighton</p>
+  </footer>
+</body>
+</html>
