@@ -13,8 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reportValidity();
         return;
       }
-      e.preventDefault();                 // remove this if you really want to submit
-      alert("Your form has been submitted!");
+      e.preventDefault(); // remove this if you really want to submit
+
+      // Let's grab the fname and lname and build a message.
+      const fname = form.elements.fname.value;
+      const lname = form.elements.lname.value;
+      alert(
+        "Thanks " + fname + " " + lname + ", your form has been submitted!"
+      );
       form.reset();
     });
   }
