@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Victoria Leighton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.cleaned.css" />
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+
+</head>
+
+<body>
+  <!-- Navigation -->
+   <header>
+    <div class="container navbar">
+      <div class="brand">Victoria Leighton</div>
+
+      <!-- Mobile toggle -->
+      <input type="checkbox" id="menu-toggle" aria-label="Toggle navigation" />
+      <label class="hamburger" for="menu-toggle" aria-hidden="true">
+        <span></span>
+      </label>
+
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <!-- Current page example -->
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page"  href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <details>
+              <!-- If Projects parent page is current, put aria-current here -->
+              <summary class="nav-link" aria-haspopup="true">
+                <a id="projects-overwrite" href="projects.html">Projects</a><span class="caret" >▾</span></summary>
+        
+
+          
+              
+              <ul class="submenu" aria-label="Projects submenu">
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-1/">Week 1</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-2/">Week 2</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-3/">Week 3</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-4/">Week 4</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-5/">Week 5</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-6/">Week 6</a></li>
+                <li><a target="_blank" href="https://vleighton-usc.github.io/idsn531-landingpage-leighton/front-end-web-programming-week-7/">Week 7</a></li>
+                <li><a href="index.html">Week 8</a></li>
+              </ul>
+            </details>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="hobbies.html">Hobbies</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main>
+
+    <div class="container">
+      <div class="column">
+        <div class="mytitles">
+          <img
+            src="week-3-images/cartoon.png"
+            alt="Cartoon avatar of Victoria Leighton"
+            id="avatar"
+          />
+          <h2 id="myschool">
+            M.S. in Integrated Design, Business and Technology at University of Southern California
+          </h2>
+          <hr style="width: 90%;border: none; height: 1px; background-color: #283618;">
+          <h2 id="mywork">Associate Web Producer at Mattel | American Girl</h2>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="intro">
+          <p id="introtext">
+            I am Victoria Leighton. This is my
+            <a target="_blank" href="https://www.linkedin.com/in/victoria-leighton/">LinkedIn</a>.<br /><br />
+            You're probably wondering what the point of this page is. Well, I'm going back to the basics of HTML and CSS!
+            You see, in Website Production I'm more focused on Content Authoring, which involves a lot of
+            <i>understanding</i> HTML and CSS but not necessarily writing it myself.
+            Believe it or not, I used to be pretty good at writing HTML and CSS from scratch but now I feel like I've totally lost my knowledge.<br /><br />
+            I know this page is really ugly right now, and not a e s t h e t i c. But I will get there! I promise I'm actually pretty good at web design!
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p>Copyright © 2025 Victoria Leighton</p>
+  </footer>
+</body>
+</html>
