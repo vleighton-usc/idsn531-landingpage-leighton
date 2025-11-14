@@ -109,7 +109,7 @@ header .navbar .nav-item details > summary.nav-link[aria-current="page"]{
 a:focus-visible, summary:focus-visible{ outline:2px solid #6aa9ff; outline-offset:2px; }
 
 /* Intro area */
-.intro{ margin:24px auto; padding:20px; }
+.intro{ margin:24px auto; padding:20px auto; }
 .intro a{ color:var(--link-color); }
 .intro a:hover{ color:var(--accent); }
 
